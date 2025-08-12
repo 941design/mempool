@@ -1,0 +1,16 @@
+[package]
+name = "app-launcher"
+version = "0.1.0"
+edition = "2021"
+description = "Mempool desktop launcher"
+
+[dependencies]
+tauri = { version = "1", features = ["window", "protocol"] }
+tauri-plugin-single-instance = "0.1"
+tauri-plugin-log = { version = "0.2", features = ["rotation"] }
+tempfile = "3"
+dirs-next = "2"
+serde = { version = "1", features = ["derive"] }
+
+[build-dependencies]
+serde = { version = "1", features = ["derive"] }

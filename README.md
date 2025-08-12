@@ -36,3 +36,44 @@ Mempool can be installed in other ways too, but we only recommend doing so if yo
 - See the [`docker/`](./docker/) directory for instructions on deploying Mempool with Docker.
 - See the [`backend/`](./backend/) and [`frontend/`](./frontend/) directories for manual install instructions oriented for developers.
 - See the [`production/`](./production/) directory for guidance on setting up a more serious Mempool instance designed for high performance at scale.
+
+## Desktop launcher
+
+A lightweight desktop wrapper based on [Tauri](https://tauri.app/) is available in the `app-launcher` directory. It embeds the
+web UI in a single window and connects to a running backend.
+
+### Environment
+
+Create a `.env.desktop` file with the following keys:
+
+```
+BACKEND_HTTP_URL=    # Base HTTP URL of the backend API
+BACKEND_WS_URL=      # WebSocket URL for realtime updates
+FRONTEND_DEV_URL=    # Dev server URL used by Tauri in `make dev`
+```
+
+### Development
+
+```
+make dev
+```
+
+This starts the backend, the frontend dev server and the Tauri application.
+
+### Build
+
+```
+make build
+```
+
+Static assets are built and bundled into platform specific installers.
+
+### Run
+
+``` 
+make run
+```
+
+Launches the packaged desktop app. Bundled installers and binaries are
+written to `app-launcher/src-tauri/target/release/bundle/` (e.g. `.dmg`,
+`.msi`, `.AppImage`).

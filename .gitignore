@@ -7,3 +7,7 @@ frontend/src/resources/config.template.js
 frontend/src/resources/config.js
 target
 docker/backend/start_ci.sh
+# Desktop launcher artifacts
+app-launcher/node_modules
+app-launcher/src-tauri/target
+app-launcher/src-tauri/bundle

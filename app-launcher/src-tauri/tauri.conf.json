@@ -1,0 +1,50 @@
+{
+  "package": {
+    "productName": "Mempool Launcher",
+    "version": "0.1.0"
+  },
+  "build": {
+    "devPath": "$env(FRONTEND_DEV_URL)",
+    "distDir": "../frontend/dist/mempool/browser"
+  },
+  "tauri": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "Mempool",
+        "width": 1280,
+        "height": 800,
+        "resizable": true,
+        "decorations": true,
+        "fullscreen": false,
+        "devtools": false
+      }
+    ],
+    "singleInstance": {
+      "enabled": true
+    },
+    "security": {
+      "csp": "default-src 'self'; img-src 'self' data https:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self' $env(BACKEND_HTTP_URL) $env(BACKEND_WS_URL);",
+      "dangerousDisableAssetCspModification": false
+    },
+    "allowlist": {
+      "all": false,
+      "shell": false,
+      "http": false,
+      "open": false
+    },
+    "webview": {
+      "dataDirectory": "$env(TEMP_PROFILE_DIR)"
+    },
+    "protocol": {
+      "custom": {
+        "schemes": ["app"]
+      }
+    },
+    "bundle": {
+      "active": true,
+      "targets": "all",
+      "identifier": "com.mempool.launcher"
+    }
+  }
+}
