@@ -1,0 +1,16 @@
+{
+  "name": "mempool-app-launcher",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Tauri launcher for the Mempool web UI",
+  "scripts": {
+    "dev": "tauri dev",
+    "build": "tauri build"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2"
+  },
+  "scarfSettings": {
+    "enabled": false
+  }
+}
